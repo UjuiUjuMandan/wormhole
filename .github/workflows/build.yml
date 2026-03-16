@@ -155,6 +155,7 @@ jobs:
         run: |
           flutter clean
           flutter pub get
+          export RUSTFLAGS="-C link-args=-Wl,--hash-style=gnu"
           flutter build apk --split-per-abi --release
       - name: Display APK sizes
         run: |
