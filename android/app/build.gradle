@@ -109,6 +109,7 @@ dependencies {
     tasks.register("cargoBuild$taskPostfix", Exec) {
         workingDir "../../rust"
         environment ANDROID_NDK_HOME: "$ANDROID_NDK"
+        environment RUSTFLAGS: "-C link-args=-Wl,--hash-style=gnu"
         commandLine 'cargo', 'ndk',
                 // the 2 ABIs below are used by real Android devices
                 '-t', 'armeabi-v7a',
