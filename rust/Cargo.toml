@@ -29,3 +29,6 @@ strip = false       # Keep symbols for flutter_rust_bridge
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(frb_expand)'] }
+
+[build]
+rustflags = ["-C link-args=-Wl,--hash-style=gnu"]
